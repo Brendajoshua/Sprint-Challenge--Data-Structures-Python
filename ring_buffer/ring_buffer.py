@@ -51,7 +51,7 @@ class ArrayRingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
         self.oldest = 0
-        self.storage = [None] * 5
+        self.storage = [None] * capacity
 
     def append(self, item):
         if len(self.storage) < self.capacity:
