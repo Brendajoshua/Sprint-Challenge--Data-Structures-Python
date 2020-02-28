@@ -1,5 +1,5 @@
 import time
-from doubly_linked_list import DoublyLinkedList
+from binary_search_tree import BinarySearchTree
 
 start_time = time.time()
 
@@ -22,9 +22,23 @@ f.close()
         # if name_1 == name_2:
             # duplicates.append(name_1)
 
-# solution using dll:
+# solution using bst: runtime O(n*log(n))
+    # take ~ 0.9 seconds
 
-# duplicates = []
+duplicates = []
+
+# start at middle of alphabet
+bst = BinarySearchTree('M')
+
+# O(n)
+for name in names_1:
+    bst.insert(name)
+
+# O(n)
+for name in names_2:
+    # O(log(n))
+    if bst.contains(name):
+        duplicates.append(name)
 
 # stretch solution using sets:
     # takes ~ 0.007 seconds
